@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jr Eletrônica Veicular | Especialista em Injeção e Elétrica</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+    <a href="#home">
+        Jr <span>Eletrônica Veicular</span>
+    </a>
+</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+                <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Contatos <i class="fas fa-caret-down"></i></a>
+    <div class="dropdown-content">
+        <a href="tel:5581971106577"><i class="fas fa-phone"></i> Ligar Agora</a>
+        
+        <a href="https://wa.me/5581971106577" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        
+        <a href="https://www.instagram.com/autoeletricaajr?igsh=MTU1cjBvdmE0cnZ2eQ==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Diagnóstico Preciso, Carro Seguro.</h1>
+            <p>Especialista em injeção eletrônica .</p>
+            <a href="https://wa.me/5581971106577" class="btn-whatsapp">Agendar Avaliação pelo WhatsApp</a>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="cards-container">
+            <div class="card" onclick="abrirGaleriaMultipla(['imagens/trabalho-injecao.jpeg','imagens/trabalho-injecao3.jpeg','imagens/trabalho-injecao4.jpeg','imagens/trabalho-injecao5.jpeg',])" style="cursor: pointer;">
+                <img src="imagens/luz-injecao.png"class="luz-painel"style="width:150px !important; height:auto">
+                <h3>Injeção Eletrônica</h3>
+                <p>diagnostico avançado sistema de injeçao.</p>
+            </div>
+            <div class="card" onclick="abrirGaleriaMultipla(['Imagens/trabalho-abs2.jpeg', 'Imagens/trabalho-abs.jpeg',])" style="cursor: pointer;"> 
+                <img src="imagens/luz-abs.png"class="luz-painel"style="width:150px !important; height:auto">
+                <h3>ABS</h3>
+                <p>Manutenção especializada em sistema de freio ABS</p>
+            </div>
+            <div class="card" onclick="abrirGaleriaMultipla(['imagens/trabalho-airbag.jpeg','imagens/trabalho-aibag2.jpeg'])" style="cursor: pointer;">
+                <img src="imagens/luz-airbag.png"style="width:150px !important; height:auto">
+                <h3>AIR BAG</h3>
+                <p> manutençao especializada sistema AIR BAG</p>
+            </div>
+        </div>
+    </section>
+<section id="localizacao" class="secao-mapa">
+    <div class="container-local">
+        <h2>Onde Estamos</h2>
+        <p><i class="fas fa-map-marker-alt"></i> Rua Francisco Pereira da Silva, 816 - Jardim Boa Vista, Caruaru - PE</p>
+        
+        <div class="google-maps">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.5446733276683!2d-35.9754432!3d-8.2713783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a98ec76ff1dd255%3A0x99a7aa66b2fdbf11!2sJR%20ELETR%C3%94NICA%20VEICULAR!5e0!3m2!1spt-BR!2sbr!4v1713280000000!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <div class="botoes-mapa">
+            <a href= "https://www.google.com/maps/search/?api=1&query=JR+ELETRÔNICA+VEICULAR&query_place_id=ChIJVdIf_3aLqQcRAY_9sqaqp5k" target="_blank" class="btn-rota">
+                <i class="fas fa-directions"></i> Como Chegar
+            </a>
+        </div>
+    </div>
+</section>
+    <footer>
+        <p>&copy; 2026 Jr Eletrônica Veicular  </p>
+    </footer>
+<script src="script.js"></script>zVp9jRz
+<div id="janela-galeria" class="modal-galeria">
+    <span class="fechar-galeria" onclick="fecharGaleria()">&times;</span>
+    
+    <div id="lista-fotos-container"></div>
+    
+    <div id="legenda"></div>
+</div>
+<script>
+       function abrirGaleriaMultipla(listaFotos, texto) {
+    var modal = document.getElementById("janela-galeria");
+    var container = document.getElementById("lista-fotos-container");
+    var legenda = document.getElementById("legenda");
+
+    // Limpa fotos de cliques anteriores
+    container.innerHTML = "";
+    
+    // Adiciona cada foto da lista ao container
+    listaFotos.forEach(function(caminho) {
+        var img = document.createElement("img");
+        img.src = caminho;
+        img.className = "foto-ampliada"; // Usa o estilo de borda amarela que já criamos
+        container.appendChild(img);
+    });
+
+    legenda.innerHTML = texto;
+    modal.style.display = "flex";
+    
+    // Faz a janela voltar para o topo sempre que abrir
+    modal.scrollTop = 0;
+} 
+
+        
+
+        function fecharGaleria() {
+            document.getElementById("janela-galeria").style.display = "none";
+        }
+
+        // Fechar a galeria se o usuário clicar fora da imagem
+        window.onclick = function(event) {
+            var modal = document.getElementById("janela-galeria");
+            if (event.target == modal) {
+                fecharGaleria();
+            }
+        }
+    </script>
+</body>
+</html>
